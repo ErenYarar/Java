@@ -1,0 +1,37 @@
+ public static void main(String[] args) 
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("ilk sayinizi girin: ");
+        float sayi1 = input.nextFloat();
+        System.out.print("ikinci sayinizi girin: ");
+        float sayi2 = input.nextFloat();
+        
+        float toplam = sayi1 + sayi2;
+        float fark = sayi1 - sayi2;
+        float carpim = sayi1 * sayi2;
+        float bölüm = sayi1 / sayi2;
+        System.out.println("*******************");
+        System.out.println("1: Toplam , 2: Fark , 3: Carpim , 4: Bölüm");       
+        System.out.print("İşleminizi giriniz: ");
+        float islem = input.nextFloat();
+        
+        if(islem == 1)
+        {
+            System.out.println("Toplam: "+toplam);
+        }
+        if(islem == 2)
+        {
+            System.out.println("Fark: "+fark);
+        }
+        if(islem == 3)
+        {
+            System.out.println("Carpim: "+carpim);
+        }
+        if(islem == 4)
+        {
+            System.out.println("Bölüm: "+bölüm);
+        }
+        else{
+            System.out.println("Yanlış işlem girdiniz...");
+        }
+    }
