@@ -1,0 +1,53 @@
+public static void main(String[] args) 
+    {          
+        /* 1-> bakiye ögrenme
+           2-> para çekme
+           3-> para yatıma
+           q-> çıkış        
+        */
+        
+        Scanner input = new Scanner(System.in);
+        //System.out.println("=> ");
+        //int para = input.nextInt();
+        
+        int bakiye = 3000;
+        
+        System.out.println("İsleminizi giriniz...");
+        String islem = new String(input.next());
+        
+        if(islem.equals("1"))
+        {
+            System.out.println("Bakiye: " + bakiye);
+        }
+        else if(islem.equals("2"))
+        {
+            System.out.print("Cekeceginiz para miktarı: ");
+            int miktar = input.nextInt();
+            if(bakiye - miktar < 0)
+            {
+                System.out.println("Bu kadar para cekemezsiniz...");
+            }
+            bakiye -= miktar;
+            System.out.println("Bakiye: " + bakiye);
+        }
+        else if(islem.equals("3"))
+        {
+            System.out.println("Yatırıcagınız para miktarı: ");
+            int miktar = input.nextInt();
+            if(miktar > 3000)
+            {
+                System.out.println("3000'de fazla para yatıramazsınız...");               
+            }
+            bakiye += miktar;
+            System.out.println("Bakiye: " + bakiye);
+        }
+        else if(islem.equals("q"))
+        {
+            System.out.println("Cıkış");          
+        }
+        else
+        {
+            System.out.println("Yanlış işlem...");
+        }
+        
+    }
