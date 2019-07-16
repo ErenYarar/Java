@@ -1,37 +1,52 @@
- public static void main(String[] args) 
-    {
+public static void main(String[] args) 
+    {            
+        
         Scanner input = new Scanner(System.in);
-        System.out.print("ilk sayinizi girin: ");
-        float sayi1 = input.nextFloat();
-        System.out.print("ikinci sayinizi girin: ");
-        float sayi2 = input.nextFloat();
+        System.out.print("Sayı1: ");
+        int a = input.nextInt();
+        System.out.print("Sayı2: ");
+        int b = input.nextInt();
         
-        float toplam = sayi1 + sayi2;
-        float fark = sayi1 - sayi2;
-        float carpim = sayi1 * sayi2;
-        float bölüm = sayi1 / sayi2;
-        System.out.println("*******************");
-        System.out.println("1: Toplam , 2: Fark , 3: Carpim , 4: Bölüm");       
-        System.out.print("İşleminizi giriniz: ");
-        float islem = input.nextFloat();
         
-        if(islem == 1)
+        while(true)
         {
-            System.out.println("Toplam: "+toplam);
+            System.out.println("İşlem-> ");
+            String islem = new String(input.next());
+            
+            if(islem.equals("1"))
+            {
+                System.out.println("Toplam...");
+                System.out.println(a + " + " + b + " = " + (a+b));
+            }
+            else if(islem.equals("2"))
+            {
+                System.out.println("Fark...");
+                System.out.println(a + " - " + b + " = " + (a-b));
+            }
+            else if(islem.equals("3"))
+            {
+                System.out.println("Carpım...");
+                System.out.println(a + " * " + b + " = " + (a*b));
+            }
+            else if(islem.equals("4"))
+            {
+                System.out.println("Bölüm...");
+                System.out.println(a + " / " + b + " = " + (a/b));
+            }
+            else if(islem.equals("q"))
+            {
+                System.out.println("Toplam...");
+                System.out.println("Çıkış...");
+                break;
+            }
+            else
+            {
+                System.out.println("Yanlış işlem girişi");
+                break;
+            }
+            
         }
-        if(islem == 2)
-        {
-            System.out.println("Fark: "+fark);
-        }
-        if(islem == 3)
-        {
-            System.out.println("Carpim: "+carpim);
-        }
-        if(islem == 4)
-        {
-            System.out.println("Bölüm: "+bölüm);
-        }
-        else{
-            System.out.println("Yanlış işlem girdiniz...");
-        }
+        
+        
+        
     }
