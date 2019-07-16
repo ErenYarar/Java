@@ -1,53 +1,68 @@
 public static void main(String[] args) 
-    {          
-        /* 1-> bakiye ögrenme
-           2-> para çekme
-           3-> para yatıma
-           q-> çıkış        
-        */
+    {               
+        /*
+        1->bakiye görüntüleme
+        2-> para yatırma
+        3-> para cekme
+        4->
         
-        Scanner input = new Scanner(System.in);
-        //System.out.println("=> ");
-        //int para = input.nextInt();
+        */    
         
-        int bakiye = 3000;
+        Scanner input = new Scanner(System.in);            
+        int bakiye = 1000;
         
-        System.out.println("İsleminizi giriniz...");
-        String islem = new String(input.next());
         
-        if(islem.equals("1"))
+        while(true)
         {
-            System.out.println("Bakiye: " + bakiye);
-        }
-        else if(islem.equals("2"))
-        {
-            System.out.print("Cekeceginiz para miktarı: ");
-            int miktar = input.nextInt();
-            if(bakiye - miktar < 0)
+            System.out.println("İslemi giriniz: ");
+            String islem = new String(input.next());
+            if(islem.equals("1"))
             {
-                System.out.println("Bu kadar para cekemezsiniz...");
+                System.out.println("İslem 1'i sectiniz...");
+                System.out.println("Bakiye hesaplanıyor...");
+                System.out.println("Bakiyeniz: " + bakiye);
             }
-            bakiye -= miktar;
-            System.out.println("Bakiye: " + bakiye);
-        }
-        else if(islem.equals("3"))
-        {
-            System.out.println("Yatırıcagınız para miktarı: ");
-            int miktar = input.nextInt();
-            if(miktar > 3000)
+            else if(islem.equals("2"))
             {
-                System.out.println("3000'de fazla para yatıramazsınız...");               
+                System.out.println("İşlem 2'yi seçtiniz..");
+                System.out.print("Miktar giriniz: ");
+                int miktar = input.nextInt();
+                if(miktar > 3000)
+                {
+                    System.out.println("3000'den fazla para yatıramazsınız..");
+                    break;
+                }
+                bakiye += miktar;
+                System.out.println("Bakiye: " + bakiye);
+                
             }
-            bakiye += miktar;
-            System.out.println("Bakiye: " + bakiye);
+            else if(islem.equals("3"))
+            {
+                System.out.println("İşlem 3'ü seçtiniz..");
+                System.out.print("Çekeceginiz miktarı giriniz: ");
+                int miktar = input.nextInt();
+                if(bakiye - miktar < 0)
+                {
+                    System.out.println("Sıfırın altında para cekemezsiniz...");
+                    break;
+                }
+                bakiye -= miktar;
+                System.out.println("Bakiye: " + bakiye);
+            }
+            else if(islem.equals("q"))
+            {
+                System.out.println("Çıkılıyor...");
+                break;
+            }
+            else
+            {
+                System.out.println("Hatalı işlem secimi");
+                break;
+            }
+            
         }
-        else if(islem.equals("q"))
-        {
-            System.out.println("Cıkış");          
-        }
-        else
-        {
-            System.out.println("Yanlış işlem...");
-        }
+                
+                
+                
         
-    }
+   }
